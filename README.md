@@ -4,7 +4,7 @@ This project is designed as a simplified way to add both FreeType and HarfBuzz
 as dependent libraries of a CMake project, with automatic building, without the
 usual FreeType $\rightarrow$ HarfBuzz $\rightarrow$ FreeType cyclic dependency issue.
 
-**Warning**: HarfBuzz apparently has deperecated and may soon remove the CMake
+**Warning**: HarfBuzz apparently has deprecated the CMake build and may soon remove the CMake
 build in favour of Meson.
 
 ## Table of Contents
