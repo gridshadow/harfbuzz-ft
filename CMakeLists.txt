@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13.0)
-project(harfbuzz-ft VERSION 0.1.0)
+project(harfbuzz-ft VERSION 1.0.1)
 
 # Ensure freetype & harfbuzz are available by updating submodules using git
 find_package(Git QUIET)
@@ -9,7 +9,7 @@ if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
     option(GIT_SUBMODULE "Check submodules during build" ON)
     if(GIT_SUBMODULE)
         message(STATUS "Submodule update")
-        execute_process(COMMAND ${GIT_EXECUTABLE} submodule update --remote --init
+        execute_process(COMMAND ${GIT_EXECUTABLE} submodule update --recursive --init
                         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
                         RESULT_VARIABLE GIT_SUBMOD_RESULT)
         if(NOT GIT_SUBMOD_RESULT EQUAL "0")

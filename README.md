@@ -40,7 +40,7 @@ Each harfbuzz-ft release is pinned to a FreeType and HarfBuzz versions
 
 | harfbuzz-ft | FreeType | HarfBuzz |
 |:-----------:|:--------:|:--------:|
-| 1.0.0       | 2.13.0   | 7.1.0    |
+| 1.0.1       | 2.13.0   | 7.1.0    |
 
 The used version can be changed with the following CMake options during CMake
 configuration:
