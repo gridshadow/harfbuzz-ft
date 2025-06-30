@@ -92,7 +92,7 @@ message(STATUS "Using FreeType version ${FREETYPE_VERSION_MAJOR}.${FREETYPE_VERS
 # Read HarfBuzz version number:
 
 file(READ "harfbuzz/meson.build" HARFBUZZ_MESON)
-string(REGEX MATCH "version:\\s*'([0-9]+\\.[0-9]+\\.[0-9]+)'" _ ${HARFBUZZ_MESON})
+string(REGEX MATCH "version: *'([0-9]+\\.[0-9]+\\.[0-9]+)'" _ ${HARFBUZZ_MESON})
 message(STATUS "Using HarfBuzz version ${CMAKE_MATCH_1}")
 
 # Solving the freetype->harfbuzz->freetype dependency chain is actually simpler with CMake than
