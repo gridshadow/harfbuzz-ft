@@ -107,7 +107,12 @@ set(HARFBUZZ_FOUND ON)
 add_subdirectory(freetype)
 # Add the HarfBuzz library now, which will detect FreeType and setup to build with FreeType support
 add_subdirectory(harfbuzz)
+
 # Now we add the cyclic dependency of FreeType on HarfBuzz
 target_link_libraries(freetype PUBLIC harfbuzz)
 add_dependencies(freetype harfbuzz)
 target_include_directories(freetype PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/harfbuzz/src)
+
+# hb-ft.h is not include in the public headers because HarfBuzz removes it if freetype is a target
+get_target_property(HARFBUZZ_SRC harfbuzz SOURCE_DIR)
+install(FILES ${HARFBUZZ_SRC}/src/hb-ft.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/harfbuzz)
